@@ -1,0 +1,72 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Course shop</a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <i class="med material-icons">menu</i>
+        </a>
+        <ul id="slide-out" class="sidenav">
+            {{#if isHome}}
+                <li class="active"><a href="/">Home</a></li>
+            {{else}}
+                <li><a href="/">Home</a></li>
+            {{/if}}
+            {{#if isCourses}}
+                <li class="active"><a href="/courses">Courses</a></li>
+            {{else}}
+                <li><a href="/courses">Courses</a></li>
+            {{/if}}
+
+            {{#if isAuthenticated}}
+                {{#if isAdd}}
+                    <li class="active"><a href="/add">Add new course</a></li>   
+                {{else}}
+                    <li><a href="/add">Add new course</a></li>
+                {{/if}}
+                {{#if isCart}}
+                    <li class="active"><a href="/cart">Cart</a></li>   
+                {{else}}
+                    <li><a href="/cart">Cart</a></li>
+                {{/if}}
+            {{else}}
+                {{#if isAuth}}
+                    <li class="active"><a href="/auth#signin">Auth</a></li>   
+                {{else}}
+                    <li><a href="/auth#signin">Auth</a></li>
+                {{/if}}
+            {{/if}}            
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isHome}}
+                <li class="active"><a href="/">Home</a></li>
+            {{else}}
+                <li><a href="/">Home</a></li>
+            {{/if}}
+            {{#if isCourses}}
+                <li class="active"><a href="/courses">Courses</a></li>
+            {{else}}
+                <li><a href="/courses">Courses</a></li>
+            {{/if}}
+            {{#if isAuthenticated}}
+                {{#if isAdd}}
+                    <li class="active"><a href="/add">Add new course</a></li>   
+                {{else}}
+                    <li><a href="/add">Add new course</a></li>
+                {{/if}}
+                {{#if isCart}}
+                    <li class="active"><a href="/cart">Cart</a></li>   
+                {{else}}
+                    <li><a href="/cart">Cart</a></li>
+                {{/if}}
+
+                <li><a href="/auth/logout">Log out</a></li>
+            {{else}}
+                {{#if isAuth}}
+                    <li class="active"><a href="/auth#signin">Auth</a></li>   
+                {{else}}
+                    <li><a href="/auth#signin">Auth</a></li>
+                {{/if}}
+            {{/if}}    
+        </ul>
+    </div>
+</nav>
+        

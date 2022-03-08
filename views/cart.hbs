@@ -1,0 +1,33 @@
+<h1>Cart</h1>
+<div id="cart">
+    {{#if courses.length}}
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Count</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                {{#each courses}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{count}}</td>
+                    <td>{{price}}</td>
+                    <td>
+                        <form action="/cart/remove" method="post">
+                            <input type="hidden" name="id" value="{{_id}}">
+                            <button type="submit" class="btn btn-small btn-remove">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+        </tbody>
+    </table>
+    <p><strong>Price: </strong><span class="price">{{price}}</span></p>
+    {{else}}
+        <p>Cart is empty. Let's buy some course</p>
+    {{/if}}
+</div>
